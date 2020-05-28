@@ -11,7 +11,7 @@ public class Spawner : MonoBehaviour
     private Vector3 _maxPos;
 
     [SerializeField]
-    private GameObject _prefab;
+    private GameObject[] _prefab;
 
     public int _amountOfObjectsToSpawn;
 
@@ -27,7 +27,7 @@ public class Spawner : MonoBehaviour
             if(Physics.Raycast(randomPos, -Vector3.up , out hit,Mathf.Infinity))
             {
 
-                GameObject copy = Instantiate(_prefab, hit.point, Quaternion.identity);
+                GameObject copy = Instantiate(_prefab[Random.Range(0, 2)], hit.point, Quaternion.identity);
                 _amountOfObjectsToSpawn++;
 
             }
