@@ -4,7 +4,13 @@
 public class PlayerController : MonoBehaviour
 {    
     [SerializeField]
-    private float _moveOffset = 5f;
+    private float _moveOffset = 10f;
+
+    [SerializeField]
+    private float _radiusOfInteraction = 10f;
+
+
+    public LayerMask chestLayer;
 
     Rigidbody rb;
 
@@ -21,9 +27,18 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    public void Action()
+    public void Interact(string word)
     {
-        Debug.Log("i listen!");
+
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, _radiusOfInteraction, chestLayer);
+
+        for(int i=0;i<hitColliders.Length;i++){
+
+            if(hitColliders[i].tag.Equals("chest")){
+               hitColliders[i].gameObject.GetComponent<ChestController>().tryOpen(word);
+            }
+        }
+
     }
 
 
