@@ -773,6 +773,11 @@ PrefabInstance:
       propertyPath: _moveOffset
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 7938530425584406493, guid: 0ea05acb923bb724c85988e8a5341507,
+        type: 3}
+      propertyPath: chestLayer.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
     - target: {fileID: 7938530425584406494, guid: 0ea05acb923bb724c85988e8a5341507,
         type: 3}
       propertyPath: m_Name
