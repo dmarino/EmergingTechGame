@@ -7,12 +7,13 @@ public class ChestController : MonoBehaviour
 {
 
     [SerializeField]
-    private string name;
+    private string chestName;
 
     public void tryOpen(string word){
 
-        Debug.Log(word);
-        if(word==name){
+        if(word==chestName){
+
+            GameController.instance.openChest();
              Destroy(gameObject);
         }
     }
