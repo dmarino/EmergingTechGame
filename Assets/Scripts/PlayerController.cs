@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
         float xVel = _moveOffset * Input.GetAxis("Horizontal");
         float zVel = _moveOffset * Input.GetAxis("Vertical");
 
-        rb.velocity = new Vector3(xVel,0, zVel);
+        rb.velocity = new Vector3(xVel,rb.velocity.y, zVel);
     }
 
 
